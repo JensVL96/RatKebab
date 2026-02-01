@@ -1,15 +1,20 @@
 [gd_scene format=3 uid="uid://de3cgnwrth8lr"]
 
+[ext_resource type="Texture2D" uid="uid://5thh67hcjfiq" path="res://Window/WindowBG.png" id="1_hxn30"]
 [ext_resource type="Texture2D" uid="uid://ds5rinai41b8v" path="res://tableGraphic.jpg" id="1_lh6un"]
+[ext_resource type="Script" uid="uid://dup8mtiwsrd1j" path="res://window.gd" id="1_t2qr7"]
 [ext_resource type="Texture2D" uid="uid://bsw46gajne6g6" path="res://resources/CuttingBoard.png" id="2_0gv1q"]
 [ext_resource type="Texture2D" uid="uid://cld3qc5tf2cdx" path="res://Hand/HandDefault.png" id="2_oys21"]
+[ext_resource type="Texture2D" uid="uid://ct3fpejjarghu" path="res://Window/WindowFrame.png" id="2_ygi8u"]
 [ext_resource type="Texture2D" uid="uid://dmrxxkuoo0frm" path="res://resources/TortillaPLate.png" id="3_7fv2r"]
 [ext_resource type="Script" uid="uid://b052n3b7b582v" path="res://hand_default.gd" id="3_rvujf"]
 [ext_resource type="Texture2D" uid="uid://bhh7nbeuich0v" path="res://resources/Salt.png" id="3_tklhv"]
+[ext_resource type="Script" uid="uid://cx0cn1gb12ed5" path="res://customer.gd" id="3_ygi8u"]
 [ext_resource type="Texture2D" uid="uid://su0134nle8se" path="res://resources/Condiment.png" id="4_8ts6e"]
 [ext_resource type="Texture2D" uid="uid://bdipfnjisi4xq" path="res://resources/MeatBowl.png" id="4_bsjfv"]
 [ext_resource type="Texture2D" uid="uid://b512pa3ivu3c0" path="res://resources/HerbBowl.png" id="5_b5nh1"]
 [ext_resource type="Texture2D" uid="uid://bpakflqoh131c" path="res://resources/VegBowl.png" id="5_bsjfv"]
+[ext_resource type="Texture2D" uid="uid://buqniaddwmy6n" path="res://Window/People.png" id="5_ex53a"]
 [ext_resource type="Texture2D" uid="uid://bjv3foslx1pv2" path="res://resources/SauceBowl.png" id="6_6bswh"]
 [ext_resource type="Texture2D" uid="uid://dm5tohah5sioa" path="res://resources/WrapStation.png" id="8_b5nh1"]
 [ext_resource type="Script" uid="uid://c52jqpyfs2jfi" path="res://wrapping.gd" id="8_nr8tf"]
@@ -58,6 +63,37 @@ size = Vector2(77, 112.75)
 position = Vector2(580.00006, 330)
 scale = Vector2(18.2031, 10.3594)
 texture = SubResource("GradientTexture2D_74axj")
+
+[node name="Window" type="Node2D" parent="." unique_id=767181202]
+script = ExtResource("1_t2qr7")
+
+[node name="WindowBG" type="Sprite2D" parent="Window" unique_id=896948164]
+position = Vector2(578, 201.00002)
+scale = Vector2(0.53866667, 0.444)
+texture = ExtResource("1_hxn30")
+
+[node name="WindowFrame" type="Sprite2D" parent="Window" unique_id=2015124814]
+position = Vector2(578, 201)
+scale = Vector2(0.539, 0.444)
+texture = ExtResource("2_ygi8u")
+
+[node name="WindowContainer" type="Control" parent="Window" unique_id=1833869823]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = 294.0
+offset_top = 19.0
+offset_right = 813.0
+offset_bottom = 226.0
+
+[node name="CustomerSpawner" type="Node2D" parent="Window/WindowContainer" unique_id=1261078400]
+position = Vector2(-294, -19)
+
+[node name="Customer" type="Node2D" parent="Window/WindowContainer/CustomerSpawner" unique_id=309512478]
+script = ExtResource("3_ygi8u")
+sprite_sheet = ExtResource("5_ex53a")
+
+[node name="Person" type="Sprite2D" parent="Window/WindowContainer/CustomerSpawner/Customer" unique_id=549283773]
 
 [node name="Table" type="Sprite2D" parent="." unique_id=467981459]
 position = Vector2(578, 458)
