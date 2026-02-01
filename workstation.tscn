@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://de3cgnwrth8lr"]
 
-[ext_resource type="Texture2D" uid="uid://bokfjh7k4ss6v" path="res://tableGraphic.jpg" id="1_lh6un"]
+[ext_resource type="Texture2D" uid="uid://ds5rinai41b8v" path="res://tableGraphic.jpg" id="1_lh6un"]
 [ext_resource type="Texture2D" uid="uid://bsw46gajne6g6" path="res://resources/CuttingBoard.png" id="2_0gv1q"]
 [ext_resource type="Texture2D" uid="uid://cld3qc5tf2cdx" path="res://Hand/HandDefault.png" id="2_oys21"]
 [ext_resource type="Texture2D" uid="uid://dmrxxkuoo0frm" path="res://resources/TortillaPLate.png" id="3_7fv2r"]
