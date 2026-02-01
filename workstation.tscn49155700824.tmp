@@ -1,0 +1,263 @@
+[gd_scene format=3 uid="uid://de3cgnwrth8lr"]
+
+[ext_resource type="Texture2D" uid="uid://bokfjh7k4ss6v" path="res://tableGraphic.jpg" id="1_lh6un"]
+[ext_resource type="Texture2D" uid="uid://bsw46gajne6g6" path="res://resources/CuttingBoard.png" id="2_0gv1q"]
+[ext_resource type="Texture2D" uid="uid://cld3qc5tf2cdx" path="res://Hand/HandDefault.png" id="2_oys21"]
+[ext_resource type="Texture2D" uid="uid://dmrxxkuoo0frm" path="res://resources/TortillaPLate.png" id="3_7fv2r"]
+[ext_resource type="Script" uid="uid://b052n3b7b582v" path="res://hand_default.gd" id="3_rvujf"]
+[ext_resource type="Texture2D" uid="uid://bdipfnjisi4xq" path="res://resources/MeatBowl.png" id="4_bsjfv"]
+[ext_resource type="Texture2D" uid="uid://b512pa3ivu3c0" path="res://resources/HerbBowl.png" id="5_b5nh1"]
+[ext_resource type="Texture2D" uid="uid://bpakflqoh131c" path="res://resources/VegBowl.png" id="5_bsjfv"]
+[ext_resource type="Texture2D" uid="uid://bjv3foslx1pv2" path="res://resources/SauceBowl.png" id="6_6bswh"]
+[ext_resource type="Texture2D" uid="uid://dm5tohah5sioa" path="res://resources/WrapStation.png" id="8_b5nh1"]
+[ext_resource type="Script" uid="uid://c52jqpyfs2jfi" path="res://wrapping.gd" id="8_nr8tf"]
+[ext_resource type="Texture2D" uid="uid://cs7rjbiqr5a55" path="res://Wrap/WrapVeg.png" id="9_t2u10"]
+[ext_resource type="Texture2D" uid="uid://jrq1cadyshls" path="res://Wrap/WrapMeat.png" id="10_6sf31"]
+[ext_resource type="Texture2D" uid="uid://hxpnxwih4bkj" path="res://Wrap/WrapHerbs.png" id="10_nr8tf"]
+[ext_resource type="Texture2D" uid="uid://ilw8rekdbrw6" path="res://Wrap/WrapSauce.png" id="11_6sf31"]
+[ext_resource type="Texture2D" uid="uid://bvtmgenwt3xny" path="res://Wrap/WrapCondiments.png" id="12_moqvm"]
+[ext_resource type="Texture2D" uid="uid://bx866qpvu23wb" path="res://Wrap/WrapSalt.png" id="13_y3vsm"]
+[ext_resource type="Texture2D" uid="uid://y4nmsa1ta5nw" path="res://resources/LeftFold.png" id="16_y3vsm"]
+[ext_resource type="Texture2D" uid="uid://b8nrwbrfs66un" path="res://resources/RightFold.png" id="17_o17yg"]
+
+[sub_resource type="Gradient" id="Gradient_s43te"]
+colors = PackedColorArray(0.937255, 0.921569, 0.866667, 1, 0.937255, 0.921569, 0.866667, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_74axj"]
+gradient = SubResource("Gradient_s43te")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_76bsg"]
+size = Vector2(137.5, 57.875)
+
+[sub_resource type="Gradient" id="Gradient_6qs3t"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_nqpf1"]
+gradient = SubResource("Gradient_6qs3t")
+
+[sub_resource type="Gradient" id="Gradient_7fv2r"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bsjfv"]
+gradient = SubResource("Gradient_7fv2r")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jfner"]
+size = Vector2(309, 135)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6sf31"]
+size = Vector2(67.25, 101.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_moqvm"]
+size = Vector2(77, 112.75)
+
+[node name="Workstation" type="Node2D" unique_id=1431014262]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1283174677]
+position = Vector2(580.00006, 330)
+scale = Vector2(18.2031, 10.3594)
+texture = SubResource("GradientTexture2D_74axj")
+
+[node name="Table" type="Sprite2D" parent="." unique_id=467981459]
+position = Vector2(578, 458)
+scale = Vector2(1.90359, 2.77048)
+texture = ExtResource("1_lh6un")
+
+[node name="CuttingBoard" type="Sprite2D" parent="." unique_id=1311258408]
+position = Vector2(553, 409)
+texture = ExtResource("2_0gv1q")
+
+[node name="Racks" type="Node2D" parent="." unique_id=1321220111]
+
+[node name="LRackArea" type="Area2D" parent="Racks" unique_id=1226612269]
+
+[node name="LeftRack" type="Sprite2D" parent="Racks/LRackArea" unique_id=1766720949]
+
+[node name="SpiceColl" type="CollisionShape2D" parent="Racks/LRackArea" unique_id=1795502358]
+position = Vector2(95, 288)
+shape = SubResource("RectangleShape2D_76bsg")
+debug_color = Color(0.880628, 0.278645, 0.49826, 1)
+
+[node name="Spices" type="Sprite2D" parent="Racks/LRackArea" unique_id=707532851]
+position = Vector2(95.5, 289)
+scale = Vector2(2.234375, 1)
+texture = SubResource("GradientTexture2D_nqpf1")
+
+[node name="RRackArea2" type="Area2D" parent="Racks" unique_id=1290614599]
+
+[node name="RightRack" type="Sprite2D" parent="Racks/RRackArea2" unique_id=156605248]
+
+[node name="CondColl" type="CollisionShape2D" parent="Racks/RRackArea2" unique_id=60355722]
+position = Vector2(1016, 289)
+shape = SubResource("RectangleShape2D_76bsg")
+debug_color = Color(0.880628, 0.278645, 0.49826, 1)
+
+[node name="Condiments" type="Sprite2D" parent="Racks/RRackArea2" unique_id=530625862]
+position = Vector2(1017, 287)
+scale = Vector2(2.25, 1)
+texture = SubResource("GradientTexture2D_bsjfv")
+
+[node name="Ingredients" type="Node2D" parent="." unique_id=2050122996]
+
+[node name="WrapArea" type="Area2D" parent="Ingredients" unique_id=1685500093]
+
+[node name="Wraps" type="Sprite2D" parent="Ingredients/WrapArea" unique_id=1700302709]
+position = Vector2(87, 446.00003)
+scale = Vector2(0.2511889, 0.24164672)
+texture = ExtResource("3_7fv2r")
+
+[node name="WrapColl" type="CollisionShape2D" parent="Ingredients/WrapArea" unique_id=1532556714]
+position = Vector2(91, 432)
+shape = SubResource("RectangleShape2D_76bsg")
+debug_color = Color(0.880628, 0.278645, 0.49826, 1)
+
+[node name="MeatArea" type="Area2D" parent="Ingredients" unique_id=915771999]
+
+[node name="MeatColl" type="CollisionShape2D" parent="Ingredients/MeatArea" unique_id=225036132]
+position = Vector2(1040, 421)
+shape = SubResource("RectangleShape2D_76bsg")
+debug_color = Color(0.880628, 0.278645, 0.49826, 1)
+
+[node name="Meat" type="Sprite2D" parent="Ingredients/MeatArea" unique_id=1096343969]
+position = Vector2(1038, 414.00003)
+scale = Vector2(0.24215579, 0.22800004)
+texture = ExtResource("4_bsjfv")
+
+[node name="VegArea" type="Area2D" parent="Ingredients" unique_id=1128671745]
+
+[node name="Vegetables" type="Sprite2D" parent="Ingredients/VegArea" unique_id=1077757837]
+position = Vector2(558, 269)
+scale = Vector2(0.15365854, 0.10700001)
+texture = ExtResource("5_bsjfv")
+
+[node name="VegColl" type="CollisionShape2D" parent="Ingredients/VegArea" unique_id=2052009059]
+position = Vector2(558, 282)
+shape = SubResource("RectangleShape2D_76bsg")
+debug_color = Color(0.880628, 0.278645, 0.49826, 1)
+
+[node name="HerbArea" type="Area2D" parent="Ingredients" unique_id=2065140671]
+
+[node name="Herbs" type="Sprite2D" parent="Ingredients/HerbArea" unique_id=1547703370]
+position = Vector2(350, 267)
+scale = Vector2(0.1445122, 0.109000005)
+texture = ExtResource("5_b5nh1")
+
+[node name="HerbColl" type="CollisionShape2D" parent="Ingredients/HerbArea" unique_id=1910218892]
+position = Vector2(350, 284)
+shape = SubResource("RectangleShape2D_76bsg")
+debug_color = Color(0.880628, 0.278645, 0.49826, 1)
+
+[node name="SauceArea" type="Area2D" parent="Ingredients" unique_id=776658562]
+
+[node name="Sauces" type="Sprite2D" parent="Ingredients/SauceArea" unique_id=954560419]
+position = Vector2(775, 262)
+scale = Vector2(0.14491874, 0.10399999)
+texture = ExtResource("6_6bswh")
+
+[node name="SauceColl" type="CollisionShape2D" parent="Ingredients/SauceArea" unique_id=96137663]
+position = Vector2(776, 283)
+shape = SubResource("RectangleShape2D_76bsg")
+debug_color = Color(0.880628, 0.278645, 0.49826, 1)
+
+[node name="Wrapping" type="Node2D" parent="." unique_id=1665467634]
+script = ExtResource("8_nr8tf")
+hand = NodePath("../Hand/HandDefault")
+
+[node name="PlacedIngredients" type="Node2D" parent="Wrapping" unique_id=1795495609]
+
+[node name="StationArea" type="Area2D" parent="Wrapping" unique_id=63854184]
+
+[node name="Station" type="Sprite2D" parent="Wrapping/StationArea" unique_id=151976756]
+visible = false
+position = Vector2(552, 439.5)
+scale = Vector2(0.6521739, 0.4116847)
+texture = ExtResource("8_b5nh1")
+
+[node name="StationColl" type="CollisionShape2D" parent="Wrapping/StationArea" unique_id=1194157931]
+visible = false
+position = Vector2(553, 398)
+shape = SubResource("RectangleShape2D_jfner")
+debug_color = Color(0.880628, 0.278645, 0.49826, 1)
+
+[node name="Templates" type="Node2D" parent="Wrapping" unique_id=919540327]
+
+[node name="WrapMeat" type="Sprite2D" parent="Wrapping/Templates" unique_id=1484568580]
+visible = false
+position = Vector2(551, 450.00006)
+scale = Vector2(0.5489131, 0.58831525)
+texture = ExtResource("10_6sf31")
+
+[node name="WrapVeg" type="Sprite2D" parent="Wrapping/Templates" unique_id=992161739]
+visible = false
+position = Vector2(502, 470)
+texture = ExtResource("9_t2u10")
+
+[node name="WrapHerbs" type="Sprite2D" parent="Wrapping/Templates" unique_id=1437209586]
+visible = false
+position = Vector2(555, 469)
+scale = Vector2(0.8057065, 0.79211956)
+texture = ExtResource("10_nr8tf")
+
+[node name="WrapSauce" type="Sprite2D" parent="Wrapping/Templates" unique_id=586900951]
+visible = false
+position = Vector2(566, 467)
+scale = Vector2(0.82336956, 0.8097826)
+texture = ExtResource("11_6sf31")
+
+[node name="WrapCondiments" type="Sprite2D" parent="Wrapping/Templates" unique_id=433313432]
+visible = false
+position = Vector2(550, 464)
+scale = Vector2(0.78532606, 0.7880435)
+texture = ExtResource("12_moqvm")
+
+[node name="WrapSalt" type="Sprite2D" parent="Wrapping/Templates" unique_id=1162586788]
+visible = false
+position = Vector2(553, 448)
+scale = Vector2(0.66983694, 0.6345109)
+texture = ExtResource("13_y3vsm")
+
+[node name="FirstFold" type="Area2D" parent="Wrapping" unique_id=452835573]
+
+[node name="FirstWrap" type="Sprite2D" parent="Wrapping/FirstFold" unique_id=275629341]
+visible = false
+position = Vector2(552, 439.5)
+scale = Vector2(0.652, 0.412)
+texture = ExtResource("16_y3vsm")
+
+[node name="FirstColl" type="CollisionShape2D" parent="Wrapping/FirstFold" unique_id=1897019464]
+visible = false
+position = Vector2(409.625, 391)
+shape = SubResource("RectangleShape2D_6sf31")
+debug_color = Color(0.880628, 0.278645, 0.49826, 1)
+
+[node name="SecondFold" type="Area2D" parent="Wrapping" unique_id=933519446]
+
+[node name="SecondWrap" type="Sprite2D" parent="Wrapping/SecondFold" unique_id=1120174640]
+visible = false
+position = Vector2(552, 439.5)
+scale = Vector2(0.652, 0.412)
+texture = ExtResource("17_o17yg")
+
+[node name="SecondColl" type="CollisionShape2D" parent="Wrapping/SecondFold" unique_id=1973558517]
+visible = false
+position = Vector2(701.5, 399)
+shape = SubResource("RectangleShape2D_moqvm")
+debug_color = Color(0.880628, 0.278645, 0.49826, 1)
+
+[node name="Hand" type="Node2D" parent="." unique_id=1456500924]
+z_index = 10
+
+[node name="HandDefault" type="Sprite2D" parent="Hand" unique_id=1937432589]
+position = Vector2(437, 514)
+texture = ExtResource("2_oys21")
+offset = Vector2(150, 60)
+script = ExtResource("3_rvujf")
+
+[connection signal="input_event" from="Racks/LRackArea" to="Hand/HandDefault" method="_on_l_rack_area_input_event"]
+[connection signal="input_event" from="Racks/RRackArea2" to="Hand/HandDefault" method="_on_r_rack_area_2_input_event"]
+[connection signal="input_event" from="Ingredients/WrapArea" to="Hand/HandDefault" method="_on_wrap_area_input_event"]
+[connection signal="input_event" from="Ingredients/MeatArea" to="Hand/HandDefault" method="_on_meat_area_input_event"]
+[connection signal="input_event" from="Ingredients/VegArea" to="Hand/HandDefault" method="_on_veg_area_input_event"]
+[connection signal="input_event" from="Ingredients/HerbArea" to="Hand/HandDefault" method="_on_herb_area_input_event"]
+[connection signal="input_event" from="Ingredients/SauceArea" to="Hand/HandDefault" method="_on_sauce_area_input_event"]
+[connection signal="input_event" from="Wrapping/StationArea" to="Hand/HandDefault" method="_on_station_area_input_event"]
+[connection signal="input_event" from="Wrapping/StationArea" to="Wrapping" method="_on_station_area_input_event"]
+[connection signal="input_event" from="Wrapping/FirstFold" to="Wrapping" method="_on_left_fold_input_event"]
+[connection signal="input_event" from="Wrapping/SecondFold" to="Wrapping" method="_on_right_fold_input_event"]
