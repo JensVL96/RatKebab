@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bsxagvx4c6rey"]
+
+[ext_resource type="Script" uid="uid://cx0cn1gb12ed5" path="res://customer.gd" id="1_0n5xi"]
+[ext_resource type="Texture2D" uid="uid://buqniaddwmy6n" path="res://Window/People.png" id="2_axlab"]
+
+[node name="Customer" type="Control" unique_id=437419248]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+script = ExtResource("1_0n5xi")
+sprite_sheet = ExtResource("2_axlab")
+enter_x = 800
+stop_x = 200
+
+[node name="Person" type="Sprite2D" parent="." unique_id=29123221]

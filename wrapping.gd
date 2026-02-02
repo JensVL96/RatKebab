@@ -15,6 +15,7 @@ var current_item: Sprite2D = null
 @onready var tortilla := $StationArea/Station
 @onready var first_fold := $FirstFold/FirstWrap
 @onready var second_fold := $SecondFold/SecondWrap
+@onready var window := get_node("/root/Workstation/Window")
 
 var is_folded := false
 var first_fold_side = null  # "left" or "right"
@@ -33,6 +34,10 @@ func _ready():
 	tortilla.visible = false
 	first_fold.visible = false
 	second_fold.visible = false
+	
+	# get the current customer reference
+	window = get_node("/root/Workstation/Window")
+	print("Wrapping station knows window:", window)
 
 	var hand_enum = hand_node.HandType
 	hand_type_to_template = {
@@ -90,6 +95,33 @@ func randomize_item(item: Sprite2D):
 func place_from_hand():
 	var type = hand_node.hand_type
 	var hand_enum = hand_node.HandType
+	
+	# after creating `current_item`
+	var ingredient_name := ""
+	match type:
+		hand_enum.TORTILLA:
+			ingredient_name = "tortilla"
+		hand_enum.MEAT:
+			ingredient_name = "rat_meat"
+		hand_enum.VEG:
+			ingredient_name = "vegetables"
+		hand_enum.HERBS:
+			ingredient_name = "herbs"
+		hand_enum.SAUCE:
+			ingredient_name = "red_sauce"
+		hand_enum.CONDIMENT:
+			ingredient_name = "yellow_condiment"
+		hand_enum.SPICE:
+			ingredient_name = "salt"
+
+	# now tell the customer wrap about it
+	if window and window.current_customer:
+		if ingredient_name != "":
+			window.current_customer.add_ingredient(ingredient_name)
+		else:
+			print("No ingredient mapped for hand type:", type)
+	else:
+		print("No current_customer to add ingredient to!")
 
 	if type == hand_enum.NONE:
 		return

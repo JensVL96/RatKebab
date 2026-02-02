@@ -14,6 +14,7 @@ extends Sprite2D
 @onready var hand_sauce = preload("res://Hand/HandSauce.png")
 
 @onready var wrapping_station := get_node("/root/Workstation/Wrapping")
+var current_customer: Node = null
 
 enum HandType { NONE, TORTILLA, MEAT, VEG, HERBS, SAUCE, CONDIMENT, SPICE, WRAP }
 var hand_type: HandType = HandType.NONE
@@ -36,6 +37,7 @@ func _on_wrap_folded():
 	# Replace hand sprite with wrap-holding sprite
 	texture = hand_wrap  # or whatever sprite indicates holding the folded wrap
 	# Optionally, you could parent the folded wrap to the hand here
+	hand_type = HandType.WRAP
 	print("Wrap folded! Hand can now pick it up.")
 
 #func _input(event):
