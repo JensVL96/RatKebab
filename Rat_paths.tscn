@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://cy022myscd3jo"]
+
+[ext_resource type="Script" uid="uid://dxc4myl07mtec" path="res://rat_paths.gd" id="1_he48p"]
+[ext_resource type="Curve2D" uid="uid://crt1kxmgvjntn" path="res://rat_path_7.tres" id="2_kkuc4"]
+[ext_resource type="Script" path="res://panel.gd" id="4_oruw1"]
+[ext_resource type="Texture2D" uid="uid://0ht5xewct056" path="res://backalley.png" id="5_02eoi"]
+[ext_resource type="AudioStream" uid="uid://c3djqdpffolqd" path="res://shotgun_sound.mp3" id="5_7ifs3"]
+[ext_resource type="Script" path="res://audio_stream_player.gd" id="5_qay6o"]
+
+[node name="Node2D" type="Node2D" unique_id=1362370263]
+script = ExtResource("1_he48p")
+metadata/_edit_group_ = true
+
+[node name="Path2D3" type="Path2D" parent="." unique_id=732818611]
+curve = ExtResource("2_kkuc4")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=330078265]
+show_behind_parent = true
+scale = Vector2(0.75065106, 0.6328125)
+texture = ExtResource("5_02eoi")
+centered = false
+
+[node name="Timer" type="Timer" parent="." unique_id=1585577792]
+autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1650514549]
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=80887211]
+offset_right = 137.0
+offset_bottom = 34.0
+script = ExtResource("4_oruw1")
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel" unique_id=740702870]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1282683807]
+stream = ExtResource("5_7ifs3")
+script = ExtResource("5_qay6o")
+
+[connection signal="update_text" from="." to="CanvasLayer/Panel" method="_rat_killed"]
+[connection signal="timeout" from="Timer" to="." method="spawn_rat"]
+[connection signal="timeout" from="Timer" to="CanvasLayer/Panel" method="_on_timer_timeout"]
+[connection signal="done" from="CanvasLayer/Panel" to="." method="_on_panel_done"]

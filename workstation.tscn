@@ -1,15 +1,15 @@
-[gd_scene format=3 uid="uid://de3cgnwrth8lr"]
+[gd_scene format=3 uid="uid://dfdhxj4ptt6w1"]
 
 [ext_resource type="Texture2D" uid="uid://5thh67hcjfiq" path="res://Window/WindowBG.png" id="1_hxn30"]
 [ext_resource type="Texture2D" uid="uid://ds5rinai41b8v" path="res://tableGraphic.jpg" id="1_lh6un"]
-[ext_resource type="Script" uid="uid://dup8mtiwsrd1j" path="res://window.gd" id="1_t2qr7"]
+[ext_resource type="Script" path="res://window.gd" id="1_t2qr7"]
 [ext_resource type="Texture2D" uid="uid://bsw46gajne6g6" path="res://resources/CuttingBoard.png" id="2_0gv1q"]
 [ext_resource type="PackedScene" uid="uid://bsxagvx4c6rey" path="res://Customer.tscn" id="2_ex53a"]
 [ext_resource type="Texture2D" uid="uid://cld3qc5tf2cdx" path="res://Hand/HandDefault.png" id="2_oys21"]
 [ext_resource type="Texture2D" uid="uid://ct3fpejjarghu" path="res://Window/WindowFrame.png" id="2_ygi8u"]
 [ext_resource type="Texture2D" uid="uid://dmrxxkuoo0frm" path="res://resources/TortillaPLate.png" id="3_7fv2r"]
 [ext_resource type="Texture2D" uid="uid://c22mul5k58x2p" path="res://Window/ShutterWindow.png" id="3_int05"]
-[ext_resource type="Script" uid="uid://b052n3b7b582v" path="res://hand_default.gd" id="3_rvujf"]
+[ext_resource type="Script" path="res://hand_default.gd" id="3_rvujf"]
 [ext_resource type="Texture2D" uid="uid://bywyp87mbhq4h" path="res://Window/SuccessPaper.png" id="3_t0b03"]
 [ext_resource type="Texture2D" uid="uid://bhh7nbeuich0v" path="res://resources/Salt.png" id="3_tklhv"]
 [ext_resource type="Texture2D" uid="uid://su0134nle8se" path="res://resources/Condiment.png" id="4_8ts6e"]
@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://bjv3foslx1pv2" path="res://resources/SauceBowl.png" id="6_6bswh"]
 [ext_resource type="Texture2D" uid="uid://badv03l570wm5" path="res://Window/Bubble.png" id="6_int05"]
 [ext_resource type="Texture2D" uid="uid://dm5tohah5sioa" path="res://resources/WrapStation.png" id="8_b5nh1"]
-[ext_resource type="Script" uid="uid://c52jqpyfs2jfi" path="res://wrapping.gd" id="8_nr8tf"]
+[ext_resource type="Script" path="res://wrapping.gd" id="8_nr8tf"]
 [ext_resource type="Texture2D" uid="uid://cs7rjbiqr5a55" path="res://Wrap/WrapVeg.png" id="9_t2u10"]
 [ext_resource type="Texture2D" uid="uid://jrq1cadyshls" path="res://Wrap/WrapMeat.png" id="10_6sf31"]
 [ext_resource type="Texture2D" uid="uid://hxpnxwih4bkj" path="res://Wrap/WrapHerbs.png" id="10_nr8tf"]
@@ -84,7 +84,6 @@ texture = SubResource("GradientTexture2D_74axj")
 [node name="Window" type="Node2D" parent="." unique_id=767181202]
 script = ExtResource("1_t2qr7")
 customer_scene = ExtResource("2_ex53a")
-perfect_count = 3
 
 [node name="Newspaper" type="Sprite2D" parent="Window" unique_id=2021384465]
 visible = false

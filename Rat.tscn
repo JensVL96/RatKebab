@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://ctrm1dygpjdqf"]
+
+[ext_resource type="Script" path="res://ratscript.gd" id="1_4ap6t"]
+[ext_resource type="Script" path="res://rat.gd" id="1_45mav"]
+[ext_resource type="Script" path="res://path_follow_2d.gd" id="1_p2c4i"]
+[ext_resource type="Texture2D" uid="uid://st1qr5e5i21p" path="res://Raw_walk_1.png" id="2_8ke84"]
+[ext_resource type="Curve2D" uid="uid://crt1kxmgvjntn" path="res://rat_path_7.tres" id="2_xx6ud"]
+[ext_resource type="Texture2D" uid="uid://wsyriu06euv5" path="res://Raw_walk_2.png" id="3_p2c4i"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4ap6t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8ke84")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_p2c4i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3qrag"]
+size = Vector2(58.68986, 40.506096)
+
+[node name="Path2D" type="Path2D" unique_id=1871934431]
+scale = Vector2(0.7, 0.7)
+script = ExtResource("1_45mav")
+path_curve_array = Array[Curve2D]([ExtResource("2_xx6ud"), ExtResource("2_xx6ud"), ExtResource("2_xx6ud"), ExtResource("2_xx6ud"), ExtResource("2_xx6ud"), ExtResource("2_xx6ud"), ExtResource("2_xx6ud"), ExtResource("2_xx6ud")])
+metadata/_edit_group_ = true
+
+[node name="PathFollow2D" type="PathFollow2D" parent="." unique_id=1542347787]
+rotation = -2.3561945
+loop = false
+script = ExtResource("1_p2c4i")
+speed = 500.0
+
+[node name="Rat" type="StaticBody2D" parent="PathFollow2D" unique_id=746704448]
+scale = Vector2(0.7, 0.7)
+collision_mask = 0
+input_pickable = true
+script = ExtResource("1_4ap6t")
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PathFollow2D/Rat" unique_id=1746690185]
+show_behind_parent = true
+sprite_frames = SubResource("SpriteFrames_4ap6t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PathFollow2D/Rat" unique_id=1014257509]
+position = Vector2(-11.667261, -0.25304985)
+shape = SubResource("RectangleShape2D_3qrag")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="PathFollow2D/Rat" unique_id=1620185866]
+
+[connection signal="screen_exited" from="PathFollow2D/Rat/VisibleOnScreenNotifier2D" to="PathFollow2D/Rat" method="_on_visible_on_screen_notifier_2d_screen_exited"]
